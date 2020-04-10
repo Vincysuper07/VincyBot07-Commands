@@ -11,7 +11,7 @@ class VincyBot07e(commands.Cog):
       async def agree(self, ctx):
             """eh"""
             member = ctx.author
-            role = discord.utils.find(lambda r: r.name == "Membri",ctx.guild.roles)
+            role = discord.utils.find(lambda r: r.name == "Members",ctx.guild.roles)
             await member.add_roles(role)
 
       @commands.command(aliases=["status"])
