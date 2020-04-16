@@ -17,7 +17,7 @@ class VincyBot07e(commands.Cog):
       @commands.command(aliases=["statusmc"])
       async def mcstatus(self, ctx):
             """Shows MC server's status."""
-            response = await self.bot.session.get("http://vps.vincysuper07.cf/vincystatus/enapi.php")
+            response = await self.bot.session.get("http://statomc.vincysuper07.cf/vincystatus/enapi.php")
             status = (await response.content.readline()).decode('UTF-8')
             embed = discord.Embed(title = "Minecraft Server: mc.Vincysuper07.cf", description = f"Right now the server is {status}")
             if status == "OFFLINE.":
