@@ -14,7 +14,7 @@ class VincyBot07e(commands.Cog):
             role = discord.utils.find(lambda r: r.name == "Members",ctx.guild.roles)
             await member.add_roles(role)
 
-      @commands.command(aliases=["status"])
+      @commands.command(aliases=["statusmc"])
       async def mcstatus(self, ctx):
             """Shows MC server's status."""
             response = await self.bot.session.get("http://vps.vincysuper07.cf/vincystatus/enapi.php")
@@ -35,7 +35,7 @@ class VincyBot07e(commands.Cog):
             embed3 = discord.Embed(title="Moderation", description=f"{ctx.prefix}purge <number> - Delete an amount of messages\n{ctx.prefix}kick <someone> - Kick someone\n{ctx.prefix}mute <someone> - Mute someone\n{ctx.prefix}unmute <someone> - Unmute someone\n{ctx.prefix}nuke - Delete **every** message in a channel\n{ctx.prefix}ban <someone> - Ban someone (this is permanent ban)\n{ctx.prefix}unban <someone> - Unban someone", color = discord.Color.green())
             embed4 = discord.Embed(title="Announcements", description=f"{ctx.prefix}announcement start - Make announcement\n{ctx.prefix}announcement quick <channel> [role] <message> - An old and faster way to make announcements", color = discord.Color.green())
             embed5 = discord.Embed(title="Music", description=f"{ctx.prefix}join - Joins a voice channel\n{ctx.prefix}leave - Leaves a voice channel\n{ctx.prefix}now - Shows the currently playing song\n{ctx.prefix}pause - Pauses a song\n{ctx.prefix}play <song> - Plays a song\n{ctx.prefix}queue - Shows the queue\n{ctx.prefix}remove - Removes a song from the queue\n{ctx.prefix}resume - Resumes a song currently paused\n{ctx.prefix}shuffle - Shuffles a song\n{ctx.prefix}skip - Skips a song\n{ctx.prefix}stop - Stops playing songs and clears the queue\n{ctx.prefix}summon - The same as v!play, enters in a voice channel\n{ctx.prefix}volume <volume> - Changes the player's volume", color=discord.Color.green())
-            embed6 = discord.Embed(title="Other", description=f"{ctx.prefix}embed send <title> <Description> - Send an embed message\n{ctx.prefix}embed color <hexcode> - Change your embed message's color\n{ctx.prefix}reactionrole add <message_id> <role> <emoji> - Make a reaction role\n{ctx.prefix}status - Check Vincy's MC server's status\n{ctx.prefix}commands - Shows this message\n{ctx.prefix}help - Shows this message", color = discord.Color.green())
+            embed6 = discord.Embed(title="Other", description=f"{ctx.prefix}embed send <title> <Description> - Send an embed message\n{ctx.prefix}embed color <hexcode> - Change your embed message's color\n{ctx.prefix}reactionrole add <message_id> <role> <emoji> - Make a reaction role\n{ctx.prefix}mcstatus - Check Vincy's MC server's status\n{ctx.prefix}commands - Shows this message\n{ctx.prefix}help - Shows this message", color = discord.Color.green())
             embeds = []
             embed_list = [embed, embed1, embed2, embed3, embed4, embed5, embed6]
             for embed in embed_list:
